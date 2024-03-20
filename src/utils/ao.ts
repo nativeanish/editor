@@ -6,7 +6,7 @@ import useIntroField from "../store/Onboard/useIntroField";
 import { Mem } from "mem-sdk";
 import { WebIrys } from "@irys/sdk";
 import useAlertLoading from "../store/useAlertLoading";
-const TMP_ID = "773c3c80-951a-ae3e-6bc9-06213e1904b0";
+const TMP_ID = "o3pU2nA0Ijej56PrnEZH92WKD6OeIyBrmAddX9YEEmc";
 // export const check_user_exits = async () => {
 //   // const _id = await message({
 //   //   process: PROCESS_ID,
@@ -21,7 +21,7 @@ const TMP_ID = "773c3c80-951a-ae3e-6bc9-06213e1904b0";
 //   //   st.Messages[0].Data
 //   // );
 //   try {
-//     const mem = new Mem({ network: "testnet" });
+//     const mem = new Mem({ network: "mainnet" });
 //     const pubkey = await window.arweaveWallet.getActivePublicKey();
 //     const input = { function: "check_username", pubKey: pubkey };
 //     const result = await mem.write(
@@ -62,7 +62,7 @@ export const check_username_exists = async (data: string) => {
   useAlertLoading.setState({ show: true });
   try {
     const mem = new Mem({
-      network: "testnet",
+      network: "mainnet",
     });
     const input = { function: "check_username", username: data };
     const result = await mem.write(TMP_ID, input);
@@ -95,7 +95,7 @@ export const register = async () => {
     });
     const id = await upload_image();
     const mem = new Mem({
-      network: "testnet",
+      network: "mainnet",
     });
     const pubkey = await window.arweaveWallet.getActivePublicKey();
     console.log("regsiter");
@@ -209,7 +209,7 @@ export const upload_args = async (data: string, type: "base64" | "json") => {
 export const _get_tag = async () => {
   try {
     const mem = new Mem({
-      network: "testnet",
+      network: "mainnet",
     });
     const input = { function: "get_tag" };
     const result = await mem.write(TMP_ID, input);
@@ -231,7 +231,7 @@ export const register_articles = async (
 ) => {
   try {
     const mem = new Mem({
-      network: "testnet",
+      network: "mainnet",
     });
     const pubkey = await window.arweaveWallet.getActivePublicKey();
     const input = {
@@ -252,7 +252,7 @@ export const check_user = async () => {
   // try {
   //   const pubkey = await window.arweaveWallet.getActivePublicKey();
   //   const input = `{"function":"change", "name":"arweave"}`;
-  //   const result = await axios.post(TESTNET_ENDPOINT, { input, FUNCTION_ID });
+  //   const result = await axios.post(mainnet_ENDPOINT, { input, FUNCTION_ID });
   //   if (result) {
   //     console.log(result.data);
   //   }
@@ -261,7 +261,7 @@ export const check_user = async () => {
   // }
   try {
     const mem = new Mem({
-      network: "testnet",
+      network: "mainnet",
     });
     const pubkey = await window.arweaveWallet.getActivePublicKey();
     const input = { function: "check_user", pubKey: pubkey };
@@ -296,7 +296,7 @@ export const check_user = async () => {
 export const get_User = async (username: string) => {
   try {
     const mem = new Mem({
-      network: "testnet",
+      network: "mainnet",
     });
     const input = { function: "get_user", username };
     const result = await mem.write(TMP_ID, input);
@@ -313,7 +313,7 @@ export const get_User = async (username: string) => {
 };
 export const username_to_address = async (username: string) => {
   try {
-    const mem = new Mem({ network: "testnet" });
+    const mem = new Mem({ network: "mainnet" });
     const input = { function: "username_to_address", username: username };
     const result = await mem.write(TMP_ID, input);
     //@ts-ignore
@@ -329,7 +329,7 @@ export const username_to_address = async (username: string) => {
 };
 export const follow = async (username: string) => {
   try {
-    const mem = new Mem({ network: "testnet" });
+    const mem = new Mem({ network: "mainnet" });
     const pubkey = await window.arweaveWallet.getActivePublicKey();
     const input = {
       function: "follow",
@@ -346,7 +346,7 @@ export const follow = async (username: string) => {
 
 export const get_articles = async (title: string) => {
   try {
-    const mem = new Mem({ network: "testnet" });
+    const mem = new Mem({ network: "mainnet" });
     const input = {
       function: "get_article",
       title: title,
@@ -364,7 +364,7 @@ export const get_articles = async (title: string) => {
 
 export const upload_Comment = async (text: string, article_id: string) => {
   try {
-    const mem = new Mem({ network: "testnet" });
+    const mem = new Mem({ network: "mainnet" });
     console.log(text, article_id);
     const pubkey = await window.arweaveWallet.getActivePublicKey();
     const input = {
@@ -383,7 +383,7 @@ export const upload_Comment = async (text: string, article_id: string) => {
 
 export const get_user_recom = async () => {
   try {
-    const mem = new Mem({ network: "testnet" });
+    const mem = new Mem({ network: "mainnet" });
     const input = {
       function: "get_user_recom",
     };
@@ -399,7 +399,7 @@ export const get_user_recom = async () => {
 
 export const get_articles_by_id = async (id: string) => {
   try {
-    const mem = new Mem({ network: "testnet" });
+    const mem = new Mem({ network: "mainnet" });
     const input = {
       function: "get_article_by_id",
       id: id,
@@ -416,7 +416,7 @@ export const get_articles_by_id = async (id: string) => {
 
 export const like = async (id: string) => {
   try {
-    const mem = new Mem({ network: "testnet" });
+    const mem = new Mem({ network: "mainnet" });
     const pubkey = await window.arweaveWallet.getActivePublicKey();
     const input = {
       function: "like_article",
@@ -434,7 +434,7 @@ export const like = async (id: string) => {
 
 export const get_user_details = async (id: string) => {
   try {
-    const mem = new Mem({ network: "testnet" });
+    const mem = new Mem({ network: "mainnet" });
     const input = {
       function: "get_user_by_address",
       id: id,
@@ -451,7 +451,7 @@ export const get_user_details = async (id: string) => {
 
 export const like_comment = async (id: string, article_id: string) => {
   try {
-    const mem = new Mem({ network: "testnet" });
+    const mem = new Mem({ network: "mainnet" });
     const pubkey = await window.arweaveWallet.getActivePublicKey();
     const input = {
       function: "like_comment",
