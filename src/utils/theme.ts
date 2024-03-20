@@ -14,8 +14,8 @@ const theme = {
     nested: {
       listitem: "text-black",
     },
-    ol: "max-w-md space-y-1 text-black list-decimal list-inside",
-    ul: "max-w-md space-y-1 text-black list-disc list-inside",
+    ol: "space-y-1 text-black list-decimal list-inside",
+    ul: "space-y-1 text-black list-disc list-inside",
     listitem: "text-black",
   },
   text: {
