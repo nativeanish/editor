@@ -83,7 +83,15 @@ function App() {
               }
             />
             <Route path="/onboard" element={<OnBoard />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route
+              path="/dashboard"
+              element={
+                <>
+                  <Header />
+                  <Dashboard />
+                </>
+              }
+            />
             <Route
               path="/e/@/:username/:head"
               element={
